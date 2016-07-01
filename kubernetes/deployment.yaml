@@ -1,0 +1,38 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+
+metadata:
+  name: kubernetes-aws-volume-discovery
+  labels:
+    team: platform
+    tier: infrastructure
+    app: kubernetes-aws-volume-discovery
+
+spec:
+  revisionHistoryLimit: 3
+
+  template:
+    metadata:
+      name: kubernetes-aws-volume-discovery
+      labels:
+        team: platform
+        tier: infrastructure
+        app: kubernetes-aws-volume-discovery
+
+    spec:
+      terminationGracePeriodSeconds: 60      
+      hostNetwork: true
+
+      containers:
+      - name: discovery
+        image: 074509403805.dkr.ecr.eu-west-1.amazonaws.com/rebuy-kubernetes-aws-volume-discovery:latest
+        imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: 10m
+            memory: 20Mi
+          requests:
+            cpu: 10m
+            memory: 20Mi
+
+
