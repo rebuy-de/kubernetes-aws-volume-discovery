@@ -1,0 +1,10 @@
+package: github.com/rebuy-de/kubernetes-aws-volume-discovery
+import:
+- package: github.com/aws/aws-sdk-go
+  version: ^v1.2.2
+  subpackages:
+  - aws
+  - aws/session
+  - service/ec2
+- package: github.com/pkg/errors
+  version: ^v0.7.0
