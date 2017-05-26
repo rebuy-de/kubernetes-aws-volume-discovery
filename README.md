@@ -6,7 +6,7 @@ Scans AWS EBS volumes and adds them as PersistentVolume to Kubernetes.
 
 *You need access to our AWS account `074509403805` for these steps.*
 
-1. Get access to ECR: `eval $(aws ecr get-login --profile ecr-master --region eu-west-1)`
+1. Get access to ECR: `eval $(aws ecr get-login --profile ecr-master --region eu-west-1 --no-include-email)`
 2. Build and push Docker image: `hack/push.sh`
 3. Let Kubernetes access ECR: https://github.com/rebuy-de/kubernetes-example-application/blob/master/hack/create-ecr-imagepullsecret
 4. Deploy image: `kcr apply -f kubernetes/`
