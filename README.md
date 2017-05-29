@@ -2,6 +2,9 @@
 
 Scans AWS EBS volumes and adds them as PersistentVolume to Kubernetes.
 
+## Warning: *Deprecated!*
+Instead we are now using Storage Classes (https://kubernetes.io/docs/concepts/storage/persistent-volumes/#storageclasses).
+
 ## Usage
 
 *You need access to our AWS account `074509403805` for these steps.*
